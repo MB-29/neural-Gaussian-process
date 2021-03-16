@@ -5,6 +5,8 @@ A NumPy implementation of the bayesian inference approach of [Deep Neural Networ
 
 ## Usage
 
+### Installation
+
 Clone the repository
 ```bash
 git clone https://github.com/MB-29/NN-gaussian-process.git
@@ -14,7 +16,9 @@ move to the root directory
 ```bash
 cd NN-gaussian-process
 ```
-run the code
+
+### Usage
+Run the code
 
 ```bash
 python predict_MNIST.py
