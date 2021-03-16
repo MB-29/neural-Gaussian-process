@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.linalg import solve
-from scipy.integrate import nquad
+
+from utils import encode_one_hot
 
 
 def ReLU(x):
@@ -8,12 +9,12 @@ def ReLU(x):
 
 class NNGP:
 
-    def __init__(self, training_data, training_targets, test_data, L, sigma_eps_2, sigma_b_2=1, sigma_w_2=1, phi=ReLU):
+    def __init__(self, training_data, training_targets, test_data, L, sigma_eps_2, sigma_b_2=1, sigma_w_2=1, phi=ReLU, classify=False):
 
         # data
         self.n_training, self.d = training_data.shape
         self.training_data = training_data
-        self.training_targets = training_targets
+        self.training_targets = training_targets if classify == False else encode_one_hot(training_targets)
  
         self.n_test = test_data.shape[0]
         self.test_data = test_data
@@ -50,6 +51,8 @@ class NNGP:
         """ Fill K_values with recurrence equation (5)
         """
 
+        print('training')
+        
         # initialization
         for i in range(self.n_data):
             for j in range(i+1):
@@ -83,6 +86,11 @@ class NNGP:
     
 
     def predict(self):
+        """ Test data prediction
+
+        :return: Predicted mean, predicted covariance matrix
+        :rtype: (n_test, d) array, (n_test, n_test) array
+        """
 
         assert self.trained == True
 
@@ -99,22 +107,16 @@ class NNGP:
         
         return predicted_mean, predicted_cov
 
-        
-
-
-    def precompute_F_phi(self):
-        values = np.zeros((self.n_var, self.n_corr))
-
-
-    def F_phi_approx(self, var, corr):
-        """Gaussian integral values
+    def classify(self):
+        """Classify by performing regression on one-hot labels
         """
 
-        var_values = np.linspace(self.min_var, self.max_var)
-        corr_values = np.linspace(self.min_corr, self.max_corr)
+        predicted_mean, predicted_cov = self.predict()
+        labels = np.argmax(predicted_mean, axis=1)
 
-        return 
-    
+        return labels
+
+            
     def ReLU_iteration(self, K_xx, K_yy, K_xy, theta):
         corr = K_xy / np.sqrt(K_xx * K_yy)
         angle_term = np.sin(theta) + (np.pi - theta) * np.cos(theta) 
