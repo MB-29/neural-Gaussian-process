@@ -33,13 +33,6 @@ class NNGP:
         # inference
         self.sigma_eps_2 = sigma_eps_2
 
-        # F_phi grid
-        self.n_var, self.n_cov = 10, 10
-
-        self.min_var, self.max_var = 1, 10
-        self.min_corr, self.max_corr = 0.1, 0.9
-        self.integral_bound = 10
-
         # kernel values
         self.K_values = np.zeros((self.n_data, self.n_data, self.L))
         self.theta_values = np.zeros((self.n_data, self.n_data, self.L))
@@ -52,7 +45,7 @@ class NNGP:
         """
 
         print('training')
-        
+
         # initialization
         for i in range(self.n_data):
             for j in range(i+1):
