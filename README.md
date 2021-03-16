@@ -1,7 +1,9 @@
 # Neural Networks as Gaussian Processes
 
 
-A NumPy implementation of the bayesian inference approach of [Deep Neural Networks as Gaussian Processes](https://arxiv.org/abs/1711.00165). We implement the Bayesian inference in the framework of an infinite neral net with ReLU nonlinearity, allowing for an analytic computation of the layer kernels. 
+A NumPy implementation of the bayesian inference approach of [Deep Neural Networks as Gaussian Processes](https://arxiv.org/abs/1711.00165).
+
+We focus on infinitely wide neural network endowed with ReLU nonlinearity function, allowing for an analytic computation of the layer kernels. 
 
 ## Usage
 
