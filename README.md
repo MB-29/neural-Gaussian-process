@@ -13,14 +13,13 @@ Clone the repository
 ```bash
 git clone https://github.com/MB-29/NN-gaussian-process.git
 ```
-move to the root directory
+and move to the root directory
 
 ```bash
 cd NN-gaussian-process
 ```
 
-### Usage
-Run the code
+### Run the code
 
 ```bash
 python predict_MNIST.py
