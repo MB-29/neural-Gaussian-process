@@ -9,7 +9,7 @@ def ReLU(x):
 
 class NNGP:
 
-    def __init__(self, training_data, training_targets, test_data, L, sigma_eps_2, sigma_b_2=1, sigma_w_2=1, phi=ReLU, classify=False):
+    def __init__(self, training_data, training_targets, test_data, L, sigma_eps_2, sigma_b_2, sigma_w_2, phi=ReLU, classify=False):
 
         # data
         self.n_training, self.d = training_data.shape
@@ -112,9 +112,13 @@ class NNGP:
             
     def ReLU_iteration(self, K_xx, K_yy, K_xy, theta):
         corr = K_xy / np.sqrt(K_xx * K_yy)
+        if corr > 1:
+            corr = 1
         angle_term = np.sin(theta) + (np.pi - theta) * np.cos(theta) 
-        kernel_value = self.sigma_b_2 + self.sigma_w_2 / (2*np.pi) * np.sqrt(K_xx * K_yy) * angle_term
-        return kernel_value, np.arccos(corr)
+        K_xy_ = self.sigma_b_2 + self.sigma_w_2 / (2*np.pi) * np.sqrt(K_xx * K_yy) * angle_term
+        theta_ = np.arccos(corr)
+        return K_xy_, theta_
+        
 
     def ReLU_iteration_diagonal(self, var):
         return self.sigma_b_2 + self.sigma_w_2 / (2*np.pi) * var * np.pi

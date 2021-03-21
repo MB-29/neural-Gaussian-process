@@ -18,10 +18,26 @@ cd NN-gaussian-process
 ```
 
 ### Usage
-Run the code
 
-```bash
-python predict_MNIST.py
+
+```python
+from nngp import NNGP
+
+# ... 
+
+regression = NNGP(
+    training_data,              # Data
+    training_targets,
+    test_data,
+    L,                          # Neural network depth
+    sigma_eps_2=sigma_eps**2,   # Observation noise variance
+    sigma_w_2=sigma_w_2,        # Weight hyperparameter
+    sigma_b_2=sigma_b_2         # Bias hyperparameter
+    )
+
+regression.train()
+predictions, covariance = regression.predict()
+
 ```
 
 
