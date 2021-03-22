@@ -7,7 +7,7 @@ We focus on infinitely wide neural network endowed with ReLU nonlinearity functi
 
 ## Usage
 
-## Requirements
+### Requirements
 * Python 3
 * numpy
 
