@@ -36,7 +36,7 @@ regression = NNGP(
     training_targets,
     test_data,
     L,                          # Neural network depth
-    sigma_eps_2=sigma_eps_2,   # Observation noise variance
+    sigma_eps_2=sigma_eps_2,    # Observation noise variance
     sigma_w_2=sigma_w_2,        # Weight hyperparameter
     sigma_b_2=sigma_b_2         # Bias hyperparameter
     )
