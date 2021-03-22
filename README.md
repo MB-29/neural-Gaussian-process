@@ -7,6 +7,10 @@ We focus on infinitely wide neural network endowed with ReLU nonlinearity functi
 
 ## Usage
 
+## Requirements
+* Python 3
+* numpy
+
 ### Installation
 
 Clone the repository
@@ -19,7 +23,7 @@ and move to the root directory
 cd NN-gaussian-process
 ```
 
-### Run the code
+### Use our module
 
 
 ```python
@@ -42,7 +46,9 @@ predictions, covariance = regression.predict()
 
 ```
 
+## Examples
+* A 1D regression script is provided in the file `1D_regression.py`.
+* A classification script for MNIST is provided in the file `classify_MNIST.py`. In relies on the additional requirement `python-mnist` available on pip.
 
-## Requirements
-* Python 3
-* numpy
+
+
