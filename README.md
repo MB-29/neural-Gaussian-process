@@ -48,7 +48,7 @@ predictions, covariance = regression.predict()
 
 ## Examples
 * A 1D regression script is provided in the file `1D_regression.py`.
-* A classification script for MNIST is provided in the file `classify_MNIST.py`. In relies on the additional requirement `python-mnist` available on pip.
+* A classification script for MNIST is provided in the file `classify_MNIST.py`. It relies on the additional requirement `python-mnist` available on pip.
 
 
 
