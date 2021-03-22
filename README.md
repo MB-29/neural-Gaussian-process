@@ -15,7 +15,7 @@ We focus on infinitely wide neural network endowed with ReLU nonlinearity functi
 
 Clone the repository
 ```bash
-git clone https://github.com/MB-29/NN-gaussian-process.git
+git clone https://github.com/MB-29/neural-Gaussian-process.git
 ```
 and move to the root directory
 
