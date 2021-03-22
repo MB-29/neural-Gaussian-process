@@ -20,7 +20,7 @@ git clone https://github.com/MB-29/neural-Gaussian-process.git
 and move to the root directory
 
 ```bash
-cd NN-gaussian-process
+cd neural-Gaussian-process
 ```
 
 ### Use our module
