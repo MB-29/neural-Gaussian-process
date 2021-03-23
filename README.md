@@ -7,7 +7,7 @@ We focus on infinitely wide neural network endowed with ReLU nonlinearity functi
 
 ## Usage
 
-### Requirements
+## Requirements
 * Python 3
 * numpy
 
@@ -15,12 +15,12 @@ We focus on infinitely wide neural network endowed with ReLU nonlinearity functi
 
 Clone the repository
 ```bash
-git clone https://github.com/MB-29/neural-Gaussian-process.git
+git clone https://github.com/MB-29/NN-gaussian-process.git
 ```
 and move to the root directory
 
 ```bash
-cd neural-Gaussian-process
+cd NN-gaussian-process
 ```
 
 ### Use our module
@@ -32,13 +32,13 @@ from nngp import NNGP
 # ... 
 
 regression = NNGP(
-    training_data,              # data
+    training_data,              # Data
     training_targets,
     test_data,
-    L,                          # neural network depth
-    sigma_eps_2=sigma_eps_2,    # observation noise variance
-    sigma_w_2=sigma_w_2,        # weight hyperparameter
-    sigma_b_2=sigma_b_2         # bias hyperparameter
+    L,                          # Neural network depth
+    sigma_eps_2=sigma_eps**2,   # Observation noise variance
+    sigma_w_2=sigma_w_2,        # Weight hyperparameter
+    sigma_b_2=sigma_b_2         # Bias hyperparameter
     )
 
 regression.train()
@@ -47,8 +47,10 @@ predictions, covariance = regression.predict()
 ```
 
 ## Examples
-* A 1D regression script is provided in the file `1D_regression.py`.
-* A classification script for MNIST is provided in the file `classify_MNIST.py`. It relies on the additional requirement `python-mnist` available on pip.
+* A classification script for MNIST is provided in the file `classify_MNIST.py`. In relies on the additional requirement `python-mnist` available on pip.
+* A 1D regression script is provided in the file `1D_regression.py`. We obtained the following results.
 
-
+[Network expressivity](demo/expressivity.pdf)
+[Fixed point analysis](demo/fixed_points.pdf)
+[Test uncertainty and test error](demo/error.pdf)
 
