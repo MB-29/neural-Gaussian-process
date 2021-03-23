@@ -50,7 +50,7 @@ predictions, covariance = regression.predict()
 * A classification script for MNIST is provided in the file `classify_MNIST.py`. In relies on the additional requirement `python-mnist` available on pip.
 * A 1D regression script is provided in the file `1D_regression.py`. We obtained the following results.
 
-[Network expressivity](demo/expressivity.png)
-[Fixed point analysis](demo/fixed_points.png)
-[Test uncertainty and test error](demo/error.png)
+![Network expressivity](demo/expressivity.png )
+![Fixed point analysis](demo/fixed_points.png)
+![Test uncertainty and test error](demo/error.png)
 
